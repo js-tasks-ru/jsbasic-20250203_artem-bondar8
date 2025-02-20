@@ -1,3 +1,5 @@
 function filterRange(arr, a, b) {
-  // ваш код...
-}
+  const range = arr.filter((num) => num >= a && num <= b);
+
+  return range;
+};

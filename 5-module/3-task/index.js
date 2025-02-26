@@ -3,13 +3,14 @@ function initCarousel() {
   const carouselArrowLeft = document.querySelector('.carousel__arrow_left');
   const carouselInner = document.querySelector('.carousel__inner');
   const carouselSlides = document.querySelectorAll('.carousel__slide');
+  const slideWidth = carouselSlides[0].offsetWidth;
   const totalSlides = carouselSlides.length;
   let currentSlide = 0;
 
   carouselArrowLeft.style.display = 'none';
 
   function updateCarousel() {
-    carouselInner.style.transform = `translateX(${-currentSlide * 100}%)`;
+    carouselInner.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
 
     carouselArrowLeft.style.display = currentSlide === 0 ? 'none' : '';
     carouselArrowRight.style.display = currentSlide === totalSlides - 1 ? 'none' : '';
